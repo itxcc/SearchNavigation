@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>捕鹿快搜</title>
+</head>
+<body>
+    <div id="app">
+        <div class="logo">
+            <img src="img/logo.png" alt="" >
+        </div>
+        <div class="search">
+            <input id="blue" type="text" placeholder="先输入查找词，再点击网站">
+        </div>
+    
+        <div class="content">
+            <div class="content_nav">
+                <ul>
+                    <li class="active">设计</li>
+                    <li>摄影</li>
+                    <li>内容</li>
+                </ul>
+            </div>
+            <div class="content_items">
+            <div class="item" id="douyu"  class="searchicon" onclick="search(this)">
+                <img src="img/logo.png" alt="" >
+                <h4>花瓣网</h4>
+                <span>花瓣网简介</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            </div>
+            <div class="content_items">
+            <div class="item">
+                <img src="img/logo.png" alt="">
+                <h4>摄影</h4>
+                <span>摄影</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            </div>
+            <div class="content_items">
+            <div class="item">
+                <img src="img/logo.png" alt="">
+                <h4>内容</h4>
+                <span>内容</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <span>title</span>
+                <span>intro</span>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/open_link.js"></script>
+<script>
+    $(function(){
+        $('.content_items').css('display','none');
+        $('.content_items').eq(0).css('display','flex');
+        $('.content_nav li').on('click',function(){
+            var _this = $(this);
+            $('.content_nav li').removeClass('active');
+            _this.addClass('active');
+            var index = _this.index();
+            $('.content_items').css('display','none');
+            $('.content_items').eq(index).css('display','flex');
+        })
+
+
+
+    })
+</script>
+</html>
