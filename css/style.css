@@ -77,10 +77,11 @@
     border-radius: 10px;
     float: left;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px 40px;
+    overflow: auto;
+    padding:5px 30px;
   }
   .content_items .item{
     width: 168px;
@@ -94,7 +95,14 @@
     align-items: center;
     cursor: pointer;
     transition: all .5s;
-    
+
+  }
+
+  .item:nth-child(n+2){
+    margin-left: 40px;
+  }
+  .item:nth-child(6){
+    margin-left: 0px;
   }
   .content_items .item:hover{
     transition: all .5s;
