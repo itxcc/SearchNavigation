@@ -4,6 +4,10 @@ var searchURL = {
         "search" : "http://www.douban.com/search?q=%keyword%",
         "home" : "http://www.douban.com"
     },
+    "huaban": {
+        "search" : "http://www.huaban.com/search?q=%keyword%",
+        "home" : "http://www.huaban.com"
+    },
     "baidu": {
         "search" : "http://www.baidu.com/s?wd=%keyword%",
         "home" : "http://www.baidu.com"
@@ -1379,13 +1383,72 @@ var searchURL = {
         "home" : "http://www.kugou.com"
     },
 
-
-
-
     "phaidon": {
         "search" : "http://uk.phaidon.com/store/search/?q=%keyword%",
         "home" : "http://uk.phaidon.com/"
-    }
+    },
+    "zhanku": {
+        "search" : "http://www.zcool.com.cn/search/content?&word=%keyword%",
+        "home" : "http://www.zcool.com.cn/"
+    },
+    "duitang": {
+        "search" : "http://www.duitang.com/search/?kw=%keyword%&type=feed",
+        "home" : "http://www.duitang.com/"
+    },
+    "iconfont": {
+        "search" : "http://www.iconfont.cn/search/index?searchType=icon&q=%keyword%",
+        "home" : "http://www.iconfont.cn/"
+    },
+    "quanjing": {
+        "search" : "http://www.quanjing.com/search.aspx?q=%keyword%#1||1|100|1|2||||||",
+        "home" : "http://www.quanjing.com/"
+    },
+    "hippopx": {
+        "search" : "http://www.hippopx.com/zh/search?q=%keyword%",
+        "home" : "http://www.hippopx.com/zh"
+    },
+    "xueshu": {
+        "search" : "http://xueshu.baidu.com/s?wd=%keyword%&rsv_bp=0&tn=SE_baiduxueshu_c1gjeupa&rsv_spt=3&ie=utf-8&f=8&rsv_sug2=0&sc_f_para=sc_tasktype%3D%7BfirstSimpleSearch%7D",
+        "home" : "http://xueshu.baidu.com/"
+    },
+    "visualhunt": {
+        "search" : "http://visualhunt.com/search/instant/?q=%keyword%",
+        "home" : "http://visualhunt.com/"
+    },
+    "unsplash": {
+        "search" : "http://unsplash.com/search/photos/%keyword%",
+        "home" : "http://unsplash.com/"
+    },
+    "gratisography": {
+        "search" : "http://gratisography.com/?s=%keyword%",
+        "home" : "http://gratisography.com/"
+    },
+    "pexels": {
+        "search" : "http://www.pexels.com/search/%keyword%/",
+        "home" : "http://pexels.com/"
+    },
+    "iresearch": {
+        "search" : "http://s.iresearch.cn/search/%keyword%/",
+        "home" : "http://www.iresearch.cn/"
+    },
+    "199it": {
+        "search" : "http://s.199it.com/cse/search?s=913566115233094367&entry=1&q=%keyword%",
+        "home" : "http://www.199it.com/"
+    },
+    "huxiu": {
+        "search" : "http://www.huxiu.com/search.html?s=%keyword%&f=index_search",
+        "home" : "http://www.huxiu.com/"
+    },
+    "analysys": {
+        "search" : "http://www.analysys.cn/es/search?keyword=%keyword%",
+        "home" : "http://www.analysys.cn/"
+    },
+    "zhishu": {
+        "search" : "http://index.baidu.com/v2/main/index.html#/trend/%keyword%?words=%keyword%",
+        "home" : "http://index.baidu.com/"
+    },
+
+
 }
 
 function search(sender) {
@@ -1393,7 +1456,8 @@ function search(sender) {
     var keyword = document.getElementById("blue").value
 
     if (keyword == "") {
-        window.open(searchURL[sender.id].home)
+        window.open(searchURL[sender.id].home);
+
     } else {
         var url = searchURL[sender.id].search
         var url = url.replace("%keyword%",keyword)
