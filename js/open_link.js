@@ -1045,7 +1045,7 @@ var searchURL = {
         "home" : "https://sketchfab.com/"
     },
     "qdaily": {
-        "search" : "http://qdaily.com/display/articles/search?search=%keyword%",
+        "search" : "http://qdaily.com//searches?key=%keyword%",
         "home" : "http://qdaily.com/"
     },
     "twitch": {
@@ -1448,6 +1448,15 @@ var searchURL = {
         "search" : "http://index.baidu.com/v2/main/index.html#/trend/%keyword%?words=%keyword%",
         "home" : "http://index.baidu.com/"
     },
+    "juejin": {
+        "search" : "https://juejin.im/search?query=%keyword%",
+        "home" : "https://juejin.im/"
+    },
+    "tuchong": {
+        "search" : " https://stock.tuchong.com/search?source=tc_pc_home_search&term=%keyword%",
+        "home" : "https://tuchong.com/"
+    },
+
 
 
 }
