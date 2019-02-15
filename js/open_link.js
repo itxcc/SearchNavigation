@@ -1400,7 +1400,8 @@ var searchURL = {
         "home" : "http://www.iconfont.cn/"
     },
     "quanjing": {
-        "search" : "http://www.quanjing.com/search.aspx?q=%keyword%#1||1|100|1|2||||||",
+
+        "search" : "http://www.quanjing.com/search.aspx?q=1#%keyword%||1|100|1|2||||||",
         "home" : "http://www.quanjing.com/"
     },
     "hippopx": {
