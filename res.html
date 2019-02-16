@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #txtmsg{
+        width: 100%;
+        height: 50px;
+        border:1px solid rgb(58,189,239);
+        float: left;
+    }
+    .baidu{
+        width: 700px;
+        height: 600px;
+        float: left;
+    }
+    .bing{
+        width: 700px;
+        height: 600px;
+        float: left;
+    }
+    .sougou,.zhanku,.huaban{
+        float: left;
+    }
+    iframe{
+        overflow: auto;
+    }
+</style>
+<body>
+<input id="txtmsg" onkeydown="keydownMsg(event)" type="text" />
+<div class="num zero">
+    <div class="baidu">
+        <iframe id = "baidu" width="700" height="600"   scrolling = "no">
+        </iframe>
+    </div>
+
+    <div class="bing">
+        <iframe id = "bing" width="700" height="600" scrolling = "no">
+        </iframe>
+    </div>
+</div>
+<div class="num one">
+
+    <frameset cols="45%,18,45%,18,*" bordercolor="#3E77B3" id="myFrame" sytle="z-index:-1;">
+    <div class="zhanku">
+        <iframe id = "zhanku" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+    <div class="huaban">
+        <iframe id = "huaban" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+    </frameset>
+</div>
+
+
+</body>
+
+<script src="js/jquery.min.js"></script>
+<script>
+    function keydownMsg(evt) {
+        evt = (evt) ? evt : ((window.event) ? window.event : "")
+        keyCode = evt.keyCode ? evt.keyCode : (evt.which ? evt.which : evt.charCode);
+        if (keyCode == 13) {
+            console.log(document.getElementById("txtmsg").value);//回车键弹出文本框信息
+            searchs(document.getElementById("txtmsg").value);
+        }
+    }
+    var value = decodeURI(getQueryString("value"));
+    var index = decodeURI(getQueryString("index"));
+    console.log(index);
+    $('.num').css('display','none')
+    if(index == 0){
+        $('.zero').css('display','block');
+    }
+    if(index == 1){
+        $('.one').css('display','block');
+    }
+    if(value != "" || value != null) {
+        $('#txtmsg').val(value);
+        searchs(value);
+    }
+
+
+
+    function searchs(value){
+        var txtmsg = value;
+        var baidu = document.getElementById("baidu");
+        var bing = document.getElementById("bing");
+        // var sougou = document.getElementById("sougou");
+        // var san = document.getElementById("san");
+        var zhanku = document.getElementById("zhanku");
+        var huaban = document.getElementById("huaban");
+
+        baidu.src = "https://www.baidu.com/s?wd="+txtmsg+"&rsv_spt=1&rsv_iqid=0xc75c879300090313&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=4&rsv_sug2=0&inputT=332&rsv_sug4=449";
+        bing.src = "https://cn.bing.com/search?q="+txtmsg+"&qs=n&form=QBLH&sp=-1&pq=&sc=0-0&sk=&cvid=1902A307658245AAA70D421347FFB8E1";
+        // sougou.src = "https://www.sogou.com/web?query="+txtmsg+"&_asf=www.sogou.com&_ast=&w=01019900&p=40040100&ie=utf8&from=index-nologin&s_from=index&sut=351&sst0=1550214978089&lkt=3%2C1550214977738%2C1550214977838&sugsuv=1541677588877590&sugtime=1550214978089";
+        //san.src = "https://www.so.com/s?ie=utf-8&fr=none&src=360sou_newhome&q="+txtmsg+"";
+
+        zhanku.src = "https://www.zcool.com.cn/search/content?&word="+txtmsg+"";
+        huaban.src = "http://huabanpro.com/search/?q="+txtmsg+"";
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+</script>
+</html>
