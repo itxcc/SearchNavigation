@@ -143,7 +143,7 @@
         keyCode = evt.keyCode ? evt.keyCode : (evt.which ? evt.which : evt.charCode);
         if (keyCode == 13) {
             let value = encodeURI(encodeURI(_this.value));
-            window.location = "res.html?index="+index+"&value="+value+"";
+            window.open("res.html?index="+index+"&value="+value+"");
         }
     }
     $(function(){
