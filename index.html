@@ -11,13 +11,14 @@
     <div id="app">
         <div class="logo">
             <img src="img/logo1.jpg" alt="" >
+            <span style="margin-left: 10px">内测版</span>
         </div>
-        <span style="display:flex;justify-content: center;align-items: center; margin-right: 10px;margin-bottom:50px;">蓝小鹿秘密搜索工具（内测版）</span>
+        <span style="display:flex;justify-content: center;align-items: center; margin-right: 10px;margin-bottom:50px;">创意人专用的图文搜索工具</span>
 
         <div class="content">
             <div class="content_items">
                 <div class="item">
-                    <input class="item_top" type="text" onkeydown="keydownMsg(event,this,'0')"  placeholder="快搜设计">
+                    <input class="item_top" type="text" onkeydown="keydownMsg(event,this,'0')"  placeholder="快搜">
                     <div class="website">
                         <div class="website_item">
                             <img src="img/baidu.jpg" alt="logo">
@@ -43,9 +44,91 @@
                             <span>花瓣</span>
                         </div>
                     </div>
-
                 </div>
 
+                <div class="item">
+                    <input class="item_top" type="text" onkeydown="keydownMsg(event,this,'2')"  placeholder="英文搜索">
+                    <div class="website">
+                        <div class="website_item">
+                            <img src="img/thenounproject.jpg" alt="thenounproject">
+                            <span>Noun Project</span>
+                        </div>
+                        <div class="website_item">
+                            <img src="img/flaticon.jpg" alt="flaticon">
+                            <span>FlatIcon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <input class="item_top" type="text" onkeydown="keydownMsg(event,this,'3')"  placeholder="快搜摄影">
+                    <div class="website">
+                        <div class="website_item">
+                            <img src="img/tuchong.jpg" alt="tuchong">
+                            <span>图虫</span>
+                        </div>
+                        <div class="website_item">
+                            <img src="img/quanjing.jpg" alt="quanjing">
+                            <span>全景网</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <input class="item_top" type="text" onkeydown="keydownMsg(event,this,'4')"  placeholder="快搜数据">
+                    <div class="website">
+                        <div class="website_item">
+                            <img src="img/199it.jpg" alt="199it">
+                            <span>199it</span>
+                        </div>
+                        <div class="website_item">
+                            <img src="img/iresearch.jpg" alt="iresearch">
+                            <span>艾瑞网</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <input class="item_top" type="text" onkeydown="keydownMsg(event,this,'5')"  placeholder="快搜资讯">
+                    <div class="website">
+                        <div class="website_item">
+                            <img src="img/huxiu.jpg" alt="huxiu">
+                            <span>虎嗅网</span>
+                        </div>
+                        <div class="website_item">
+                            <img src="img/36kr.jpg" alt="36kr">
+                            <span>36kr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <input class="item_top" type="text" onkeydown="keydownMsg(event,this,'6')"  placeholder="快搜信息">
+                    <div class="website">
+                        <div class="website_item">
+                            <img src="img/qichacha.jpg" alt="qichacha">
+                            <span>企查查</span>
+                        </div>
+                        <div class="website_item">
+                            <img src="img/shuidis.jpg" alt="shuidi">
+                            <span>水滴信用</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <input class="item_top" type="text" onkeydown="keydownMsg(event,this,'7')"  placeholder="快搜指数">
+                    <div class="website">
+                        <div class="website_item">
+                            <img src="img/baiduzhishu.jpg" alt="huxiu">
+                            <span>百度指数</span>
+                        </div>
+                        <div class="website_item">
+                            <img src="img/sougouzhishu.jpg" alt="36kr">
+                            <span>搜狗指数</span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -81,7 +164,7 @@
             let  _this = $(this);
             let index = _this.parent().index();
             let value = encodeURI(encodeURI(_this.prev().val()));
-            window.location = "res.html?index="+index+"&value="+value+"";
+            window.open("res.html?index="+index+"&value="+value+"");
         })
 
     })

@@ -21,7 +21,7 @@
         height: 600px;
         float: left;
     }
-    .sougou,.zhanku,.huaban{
+    .num div{
         float: left;
     }
     iframe{
@@ -43,7 +43,6 @@
 </div>
 <div class="num one">
 
-    <frameset cols="45%,18,45%,18,*" bordercolor="#3E77B3" id="myFrame" sytle="z-index:-1;">
     <div class="zhanku">
         <iframe id = "zhanku" width="700" height="800" scrolling = "yes">
         </iframe>
@@ -52,55 +51,181 @@
         <iframe id = "huaban" width="700" height="800" scrolling = "yes">
         </iframe>
     </div>
-    </frameset>
 </div>
 
+<div class="num two">
+    <div class="thenounproject">
+        <iframe id = "thenounproject" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+    <div class="flaticon">
+        <iframe id = "flaticon" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+</div>
 
+<div class="num three">
+    <div class="tuchong">
+        <iframe id = "tuchong" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+    <div class="quanjing">
+        <iframe id = "quanjing" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+</div>
+
+<div class="num four">
+    <div class="199it">
+        <iframe id = "199it" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+    <div class="iresearch">
+        <iframe id = "iresearch" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+</div>
+
+<div class="num five">
+    <div class="huxiu">
+        <iframe id = "huxiu" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+    <div class="qdaily">
+        <iframe id = "qdaily" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+</div>
+<div class="num six">
+    <div class="qichacha">
+        <iframe id = "qichacha" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+
+    <div class="shuidi">
+        <iframe id = "shuidi" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+
+</div>
+<div class="num seven">
+    <div class="baiduzhishu">
+        <iframe id = "baiduzhishu" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+    <div class="sougouzhishu">
+        <iframe id = "sougouzhishu" width="700" height="800" scrolling = "yes">
+        </iframe>
+    </div>
+</div>
 </body>
 
 <script src="js/jquery.min.js"></script>
 <script>
+
+    var value = decodeURI(getQueryString("value"));
+    var index = decodeURI(getQueryString("index"));
     function keydownMsg(evt) {
+        var index = decodeURI(getQueryString("index"));
         evt = (evt) ? evt : ((window.event) ? window.event : "")
         keyCode = evt.keyCode ? evt.keyCode : (evt.which ? evt.which : evt.charCode);
         if (keyCode == 13) {
             console.log(document.getElementById("txtmsg").value);//回车键弹出文本框信息
-            searchs(document.getElementById("txtmsg").value);
+            searchs(document.getElementById("txtmsg").value,index);
         }
     }
-    var value = decodeURI(getQueryString("value"));
-    var index = decodeURI(getQueryString("index"));
-    console.log(index);
-    $('.num').css('display','none')
+
+    $('.num').css('display','none');
     if(index == 0){
         $('.zero').css('display','block');
     }
     if(index == 1){
         $('.one').css('display','block');
     }
+    if(index == 2){
+        $('.two').css('display','block');
+    }
+    if(index == 3){
+        $('.three').css('display','block');
+    }
+    if(index == 4){
+        $('.four').css('display','block');
+    }
+    if(index == 5){
+        $('.five').css('display','block');
+    }
+    if(index == 6){
+        $('.six').css('display','block');
+    }
+    if(index == 7){
+        $('.seven').css('display','block');
+    }
     if(value != "" || value != null) {
         $('#txtmsg').val(value);
-        searchs(value);
+        searchs(value,index);
     }
 
+    console.log(index);
 
-
-    function searchs(value){
+    function searchs(value,index){
         var txtmsg = value;
-        var baidu = document.getElementById("baidu");
-        var bing = document.getElementById("bing");
-        // var sougou = document.getElementById("sougou");
-        // var san = document.getElementById("san");
-        var zhanku = document.getElementById("zhanku");
-        var huaban = document.getElementById("huaban");
+        if(index == 0){
+            var baidu = document.getElementById("baidu");
+            var bing = document.getElementById("bing");
 
-        baidu.src = "https://www.baidu.com/s?wd="+txtmsg+"&rsv_spt=1&rsv_iqid=0xc75c879300090313&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=4&rsv_sug2=0&inputT=332&rsv_sug4=449";
-        bing.src = "https://cn.bing.com/search?q="+txtmsg+"&qs=n&form=QBLH&sp=-1&pq=&sc=0-0&sk=&cvid=1902A307658245AAA70D421347FFB8E1";
-        // sougou.src = "https://www.sogou.com/web?query="+txtmsg+"&_asf=www.sogou.com&_ast=&w=01019900&p=40040100&ie=utf8&from=index-nologin&s_from=index&sut=351&sst0=1550214978089&lkt=3%2C1550214977738%2C1550214977838&sugsuv=1541677588877590&sugtime=1550214978089";
-        //san.src = "https://www.so.com/s?ie=utf-8&fr=none&src=360sou_newhome&q="+txtmsg+"";
+            baidu.src = "https://www.baidu.com/s?wd="+txtmsg+"&rsv_spt=1&rsv_iqid=0xc75c879300090313&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=4&rsv_sug2=0&inputT=332&rsv_sug4=449";
+            bing.src = "https://cn.bing.com/search?q="+txtmsg+"&qs=n&form=QBLH&sp=-1&pq=&sc=0-0&sk=&cvid=1902A307658245AAA70D421347FFB8E1";
 
-        zhanku.src = "https://www.zcool.com.cn/search/content?&word="+txtmsg+"";
-        huaban.src = "http://huabanpro.com/search/?q="+txtmsg+"";
+        }
+        if(index == 1){
+            var zhanku = document.getElementById("zhanku");
+            var huaban = document.getElementById("huaban");
+
+            zhanku.src = "https://www.zcool.com.cn/search/content?&word="+txtmsg+"";
+            huaban.src = "http://huabanpro.com/search/?q="+txtmsg+"";
+        }
+
+        if(index == 2){
+            var thenounproject = document.getElementById("thenounproject");
+            var flaticon = document.getElementById("flaticon");
+
+            thenounproject.src = "https://thenounproject.com/search/?q="+txtmsg+"";
+            flaticon.src = "https://www.flaticon.com/search?word="+txtmsg+"";
+        }
+
+        if(index == 3){
+            var tuchong = document.getElementById("tuchong");
+            var quanjing = document.getElementById("quanjing");
+            tuchong.src = "https://stock.tuchong.com/search?source=tc_pc_home_search&term="+txtmsg+"";
+            quanjing.src = "https://www.quanjing.com/search.aspx?q="+txtmsg+"";
+        }
+        if(index == 4){
+            var it = document.getElementById("199it");
+            var iresearch = document.getElementById("iresearch");
+            it.src = " http://s.199it.com/cse/search?s=913566115233094367&entry=1&q="+txtmsg+"";
+
+            iresearch.src = " http://s.iresearch.cn/search/"+txtmsg+"/";
+        }
+        if(index == 5){
+            var huxiu = document.getElementById("huxiu");
+            var kr = document.getElementById("36kr");
+            huxiu.src = "https://www.huxiu.com/search.html?s="+txtmsg+"";
+            kr.src = "https://36kr.com/search/articles/"+txtmsg+"";
+        }
+        if(index == 6){
+            var qichacha = document.getElementById("qichacha");
+            var shuidi = document.getElementById("shuidi");
+            qichacha.src = "https://www.qichacha.com/search?key="+txtmsg+"";
+            shuidi.src = " http://shuidi.cn/b-search?key="+txtmsg+"";
+        }
+
+
+        if(index == 7){
+            var baiduzhishu = document.getElementById("baiduzhishu");
+            var sougouzhishu = document.getElementById("sougouzhishu");
+            baiduzhishu.src = "https://index.baidu.com/v2/main/index.html#/trend/"+txtmsg+"?words="+txtmsg+"";
+            sougouzhishu.src = "http://zhishu.sogou.com/index/searchHeat?kwdNamesStr="+txtmsg+"&timePeriodType=MONTH&dataType=SEARCH_ALL&queryType=INPUT";
+        }
     }
 
     function getQueryString(name) {
