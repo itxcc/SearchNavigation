@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+    <title>[BSB] Baidu+So+Bing 百搜必应 | 全球中文最大 集成搜索引擎！全球华人使用最多的电脑主页！</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="js/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $('#touch1').hover(function(){
+                Submit_ontouchl();
+
+            },function(){
+                Submit_out();
+            });
+            $('#touch2').hover(function(){
+                Submit_ontouchm();
+
+            },function(){
+                Submit_out();
+            });
+            $('#touch3').hover(function(){
+                Submit_ontouchr();
+
+            },function(){
+                Submit_out();
+            });
+            $('#line1').hover(function(){
+
+                if(document.getElementById('myFrame').cols = "52%,18,30%,18,*)")
+                {
+                    //alert('9000');
+                    parent.document.getElementById('myFrame').cols="52%,18,30%,18,*";
+                }
+                //parent.document.getElementById('myFrame').cols = "30%,18,52%,18,*)";
+            });
+            $('#line2').hover(function(){
+                if(document.getElementById('myFrame').cols = "*,18,30%,18,52%)")
+                {
+                    parent.document.getElementById('myFrame').cols="*,18,30%,18,52%";
+                }
+                else{
+                    parent.document.getElementById('myFrame').cols="30%,18,52%,18,*";
+                }
+
+            });
+
+            function Submit_out()
+            {
+                if(document.getElementById('myFrame').cols = "52%,18,30%,18,*)")
+                {
+                    //alert('234');
+                    document.getElementById('myFrame').cols="36%,18,30%,18,*";
+
+                }
+                else if(document.getElementById('myFrame').cols = "30%,18,52%,18,*)")
+                {
+                    document.getElementById('myFrame').cols="36%,18,30%,18,*";
+                }
+                else if(document.getElementById('myFrame').cols = "*,18,30%,18,52%)")
+                {
+                    document.getElementById('myFrame').cols="36%,18,30%,18,*";
+                }
+            }
+            function Submit_ontouchl()
+            {
+                if(parent.document.getElementById('myFrame').cols=="36%,18,30%,18,*")
+                {
+
+                    parent.document.getElementById('myFrame').cols = "52%,18,30%,18,*)";
+
+                }
+                else if(parent.document.getElementById('myFrame').cols = "30%,18,52%,18,*)")
+                {
+                    parent.document.getElementById('myFrame').cols = "52%,18,30%,18,*)";
+                }
+
+            }
+            function Submit_ontouchm()
+            {
+                if(parent.document.getElementById('myFrame').cols=="36%,18,30%,18,*")
+                {
+
+                    parent.document.getElementById('myFrame').cols = "30%,18,52%,18,*)";
+
+                }
+                else if(parent.document.getElementById('myFrame').cols = "52%,18,30%,18,*)")
+                {
+                    parent.document.getElementById('myFrame').cols = "30%,18,52%,18,*)";
+                }
+            }
+            function Submit_ontouchr()
+            {
+                if(parent.document.getElementById('myFrame').cols=="36%,18,30%,18,*")
+                {
+
+                    parent.document.getElementById('myFrame').cols = "*,18,30%,18,52%)";
+
+                }
+                else if(parent.document.getElementById('myFrame').cols = "30%,18,52%,18,*)")
+                {
+                    parent.document.getElementById('myFrame').cols = "*,18,30%,18,52%)";
+                }
+                else
+                {
+                    parent.document.getElementById('myFrame').cols=="36%,18,30%,18,*";
+                }
+            }
+        });
+    </script>
+    </head>
+    <frameset rows="52,*" framespacing="0" frameborder="0" border="0" bordercolor="#3E77B3">
+        <frame border="0" name="poptoolsbar" framespacing="0" src="index.php?m=content&c=search&a=top&top_q=123&num=10&start=0&end=10" frameborder="NO" scrolling="no">
+
+
+        <frameset cols="36%,18,30%,18,*" bordercolor="#3E77B3" id="myFrame" sytle="z-index:-1;">
+            <frame src="http://www.baidu.com/s?wd=123&rn=10&pn=0" name="popmain" bordercolor="#3E77B3" id="touch1">
+            <frame src="middle.html" name="midFrame" frameborder="0" scrolling="no" noresize="" bordercolor="#3E77B3" id="line1">
+
+            <frame src="http://www.so.com/s?ie=utf-8&shb=1&src=360sou_newhome&q=123&rn=10&pn=1" name="popmain" bordercolor="#3E77B3" id="touch2">
+            <frame src="middle2.html" name="midFrame" frameborder="0" scrolling="no" noresize="" bordercolor="#3E77B3" id="line2">
+            <frame src="http://cn.bing.com/search?q=123&first=0" name="popmain" bordercolor="#3E77B3" id="touch3">
+        </frameset>
+
+    </frameset>
+
+    <script type="text/javascript">
+
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9a73d7fbb3e8b7c018d81a4cdf6ce610' type='text/javascript'%3E%3C/script%3E"));
+
+    </script>
+
+
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253304792'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/z_stat.php%3Fid%3D1253304792' type='text/javascript'%3E%3C/script%3E"));
+
+    </html>

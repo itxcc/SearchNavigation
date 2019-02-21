@@ -5,116 +5,144 @@
     <title>捕鹿快搜</title>
 </head>
 <style>
+    input{
+        outline:none;
+    }
     #txtmsg{
-        width: 100%;
+        width: 99%;
         height: 50px;
-        border:1px solid rgb(58,189,239);
+        border:5px solid rgb(58,189,239);
         float: left;
+        margin:10px auto;
+        padding: 0px .5%;
+        font-size: 16px;
     }
     .baidu{
-        width: 700px;
+        width: 800px;
         height: 600px;
         float: left;
     }
     .bing{
-        width: 700px;
+        width: 800px;
         height: 600px;
         float: left;
     }
+    .num{
+        width: 100%;
+        margin: auto;
+        display: inline-block;
+    }
     .num div{
+        width: 50%;
         float: left;
+        transition: all 0.5s;
+    }
+    .num div:nth-child(2) iframe{
+        float: right;
     }
     iframe{
         overflow: auto;
+    }
+    .col1{
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top:80px
+    }
+    .col2{
+        z-index: 0;
+        position: absolute;
+        right: 0;
+        top: 80px;
     }
 </style>
 <body>
 <input id="txtmsg" onkeydown="keydownMsg(event)" type="text" />
 <div class="num zero">
-    <div class="baidu">
-        <iframe id = "baidu" width="700" height="600"   scrolling = "no">
+    <div class="baidu col1">
+        <iframe id = "baidu" width="1200" height="940"  scrolling = "no">
         </iframe>
     </div>
 
-    <div class="bing">
-        <iframe id = "bing" width="700" height="600" scrolling = "no">
+    <div class="bing col2">
+        <iframe id = "bing" width="800" height="940" scrolling = "no">
         </iframe>
     </div>
 </div>
 <div class="num one">
 
-    <div class="zhanku">
-        <iframe id = "zhanku" width="700" height="800" scrolling = "yes">
+    <div class="zhanku col1">
+        <iframe id = "zhanku" width="1200" height="940" scrolling = "yes">
         </iframe>
     </div>
-    <div class="huaban">
-        <iframe id = "huaban" width="700" height="800" scrolling = "yes">
+    <div class="huaban col2">
+        <iframe id = "huaban" width="800" height="940" scrolling = "yes">
         </iframe>
     </div>
 </div>
 
 <div class="num two">
-    <div class="thenounproject">
-        <iframe id = "thenounproject" width="700" height="800" scrolling = "yes">
+    <div class="thenounproject col1">
+        <iframe id = "thenounproject" width="1200" height="940" scrolling = "yes">
         </iframe>
     </div>
-    <div class="flaticon">
-        <iframe id = "flaticon" width="700" height="800" scrolling = "yes">
+    <div class="flaticon col2">
+        <iframe id = "flaticon" width="800" height="940" scrolling = "yes">
         </iframe>
     </div>
 </div>
 
 <div class="num three">
-    <div class="tuchong">
-        <iframe id = "tuchong" width="700" height="800" scrolling = "yes">
+    <div class="tuchong col1">
+        <iframe id = "tuchong" width="1200" height="940" scrolling = "yes">
         </iframe>
     </div>
-    <div class="quanjing">
-        <iframe id = "quanjing" width="700" height="800" scrolling = "yes">
+    <div class="quanjing col2">
+        <iframe id = "quanjing" width="800" height="940" scrolling = "yes">
         </iframe>
     </div>
 </div>
 
 <div class="num four">
-    <div class="199it">
-        <iframe id = "199it" width="700" height="800" scrolling = "yes">
+    <div class="199it col1">
+        <iframe id = "199it" width="1200" height="940" scrolling = "yes">
         </iframe>
     </div>
-    <div class="iresearch">
-        <iframe id = "iresearch" width="700" height="800" scrolling = "yes">
+    <div class="iresearch col2">
+        <iframe id = "iresearch" width="800" height="940" scrolling = "yes">
         </iframe>
     </div>
 </div>
 
 <div class="num five">
-    <div class="huxiu">
-        <iframe id = "huxiu" width="700" height="800" scrolling = "yes">
+    <div class="huxiu col1">
+        <iframe id = "huxiu" width="1200" height="940" scrolling = "yes">
         </iframe>
     </div>
-    <div class="qdaily">
-        <iframe id = "qdaily" width="700" height="800" scrolling = "yes">
+    <div class="qdaily col2">
+        <iframe id = "qdaily" width="800" height="940" scrolling = "yes">
         </iframe>
     </div>
 </div>
 <div class="num six">
-    <div class="qichacha">
-        <iframe id = "qichacha" width="700" height="800" scrolling = "yes">
+    <div class="qichacha col1">
+        <iframe id = "qichacha" width="1200" height="940" scrolling = "yes">
         </iframe>
     </div>
 
-    <div class="shuidi">
-        <iframe id = "shuidi" width="700" height="800" scrolling = "yes">
+    <div class="shuidi col2">
+        <iframe id = "shuidi" width="800" height="940" scrolling = "yes">
         </iframe>
     </div>
 
 </div>
 <div class="num seven">
-    <div class="baiduzhishu">
-        <iframe id = "baiduzhishu" width="700" height="800" scrolling = "yes">
+    <div class="baiduzhishu col1">
+        <iframe id = "baiduzhishu" width="1200" height="940" scrolling = "yes">
         </iframe>
     </div>
-    <div class="sougouzhishu">
-        <iframe id = "sougouzhishu" width="700" height="800" scrolling = "yes">
+    <div class="sougouzhishu col2">
+        <iframe id = "sougouzhishu" width="800" height="940" scrolling = "yes">
         </iframe>
     </div>
 </div>
@@ -122,7 +150,18 @@
 
 <script src="js/jquery.min.js"></script>
 <script>
+    $(".col1").hover(function(){
+        $(this).find('iframe').css('width', "1200px");
+        $(this).next().find('iframe').css('width', "800px");
+    },function(){
 
+    })
+    $(".col2").hover(function(){
+        $(this).find('iframe').css('width', "1200px");
+        $(this).prev().find('iframe').css('width', "800px");
+    },function(){
+
+    })
     var value = decodeURI(getQueryString("value"));
     var index = decodeURI(getQueryString("index"));
     function keydownMsg(evt) {
@@ -134,6 +173,7 @@
             searchs(document.getElementById("txtmsg").value,index);
         }
     }
+
 
     $('.num').css('display','none');
     if(index == 0){
