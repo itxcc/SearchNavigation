@@ -85,7 +85,6 @@
     align-items: center;
     flex-wrap: wrap;
     overflow: auto;
-    padding:5px 30px;
   }
   .content_items .item{
     width: 80%;
