@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>捕鹿快搜</title>
 </head>
 <style>
@@ -154,6 +155,7 @@
     $(".col1").hover(function(){
 
         $(this).css('z-index', "9999");
+        $(this).next().css('z-index', "0");
         if($(window).width() < 1400){
             $(this).find('iframe').css('width', "1200px");
             $(this).next().find('iframe').css('width', "200px");
@@ -167,6 +169,7 @@
     })
     $(".col2").hover(function(){
         $(this).css('z-index', "9999");
+        $(this).prev().css('z-index','0');
         if($(window).width() < 1400){
             $(this).find('iframe').css('width', "1200px");
             $(this).prev().find('iframe').css('width', "200px");
