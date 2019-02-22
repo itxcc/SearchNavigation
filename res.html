@@ -150,15 +150,31 @@
 
 <script src="js/jquery.min.js"></script>
 <script>
+    console.log($(window).width());
     $(".col1").hover(function(){
-        $(this).find('iframe').css('width', "1200px");
-        $(this).next().find('iframe').css('width', "800px");
+
+        $(this).css('z-index', "9999");
+        if($(window).width() < 1400){
+            $(this).find('iframe').css('width', "1200px");
+            $(this).next().find('iframe').css('width', "200px");
+        }else{
+            $(this).find('iframe').css('width', "1200px");
+            $(this).next().find('iframe').css('width', "800px");
+        }
+
     },function(){
 
     })
     $(".col2").hover(function(){
-        $(this).find('iframe').css('width', "1200px");
-        $(this).prev().find('iframe').css('width', "800px");
+        $(this).css('z-index', "9999");
+        if($(window).width() < 1400){
+            $(this).find('iframe').css('width', "1200px");
+            $(this).prev().find('iframe').css('width', "200px");
+        }else{
+            $(this).find('iframe').css('width', "1200px");
+            $(this).prev().find('iframe').css('width', "800px");
+        }
+
     },function(){
 
     })
