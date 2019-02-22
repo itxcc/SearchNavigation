@@ -1,5 +1,5 @@
 *{padding: 0px;margin:0px}
-  input{outline:none;}
+  input{outline:none;line-height: normal;background-clip: padding-box;}
   a{text-decoration: none;}
   li{list-style: none;}
   #app{
@@ -31,6 +31,7 @@
   }
   .search input{
     width:630px;
+    height:40px;
     height:40px;
     border: 1px solid #dfe1e5;
     border-radius: 24px;
@@ -107,11 +108,12 @@
   .item_top{
     width: 83%;
     height: 40px;
-    line-height: 40px;
+    line-height: 20px;
     border-radius: 24px;
     padding: 0px 20px;
     background-color: white;
     border: none;
+    font-size: 16px;
   }
   .website{
     width: 90%;

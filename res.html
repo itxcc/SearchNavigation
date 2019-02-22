@@ -58,15 +58,16 @@
     }
 </style>
 <body>
+<!--<span>请到PC端获取更好的体验！</span>-->
 <input id="txtmsg" onkeydown="keydownMsg(event)" type="text" />
 <div class="num zero">
     <div class="baidu col1">
-        <iframe id = "baidu" width="1200" height="940"  scrolling = "no">
+        <iframe id = "baidu" width="1200" height="940"  scrolling = "yes">
         </iframe>
     </div>
 
     <div class="bing col2">
-        <iframe id = "bing" width="800" height="940" scrolling = "no">
+        <iframe id = "bing" width="800" height="940" scrolling = "yes">
         </iframe>
     </div>
 </div>
@@ -151,7 +152,12 @@
 
 <script src="js/jquery.min.js"></script>
 <script>
-    console.log($(window).width());
+    if($(window).width() <600){
+        var width = Math.ceil($(window).width() / 2);
+        $('.num div').css('float','left');
+        $('.num div iframe').css('width', width + "px");
+
+    }
     $(".col1").hover(function(){
 
         $(this).css('z-index', "9999");
